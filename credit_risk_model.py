@@ -31,18 +31,14 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # GLOBAL CONSTANTS
-# ══════════════════════════════════════════════════════════════════════════════
 
 RECOVERY_RATE = 0.10
 LOSS_GIVEN_DEFAULT = 1 - RECOVERY_RATE  # 90% loss on default
 RANDOM_STATE = 42
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # DATA LOADING & EXPLORATION
-# ══════════════════════════════════════════════════════════════════════════════
 
 def load_and_explore_data(filepath = r'C:\Users\alexl\OneDrive\Desktop\桌面\ICG\Forage-JPMorgan\Task 3 and 4_Loan_Data.csv'):
     """Load loan data and perform initial exploration."""
@@ -79,9 +75,7 @@ def load_and_explore_data(filepath = r'C:\Users\alexl\OneDrive\Desktop\桌面\IC
     return df
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # FEATURE ENGINEERING
-# ══════════════════════════════════════════════════════════════════════════════
 
 def engineer_features(df):
     """Create additional features to improve model performance."""
@@ -124,9 +118,7 @@ def engineer_features(df):
     return df
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # MODEL TRAINING
-# ══════════════════════════════════════════════════════════════════════════════
 
 def prepare_data(df):
     """Prepare features and target for modeling."""
@@ -242,9 +234,7 @@ def train_models(X, y):
     return results, scaler, X_train, X_test, y_train, y_test
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # MODEL SELECTION & FINAL MODEL
-# ══════════════════════════════════════════════════════════════════════════════
 
 def select_best_model(results):
     """Select the best performing model based on AUC."""
@@ -270,9 +260,7 @@ def select_best_model(results):
     return best_model_name, results[best_model_name]
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # VISUALIZATION
-# ══════════════════════════════════════════════════════════════════════════════
 
 def create_visualizations(df, results, feature_cols, best_model_name):
     """Create comprehensive visualizations."""
@@ -375,9 +363,7 @@ def create_visualizations(df, results, feature_cols, best_model_name):
     return fig
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # EXPECTED LOSS CALCULATION
-# ══════════════════════════════════════════════════════════════════════════════
 
 class ExpectedLossCalculator:
     """
@@ -474,9 +460,7 @@ class ExpectedLossCalculator:
         }
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # MAIN EXECUTION
-# ══════════════════════════════════════════════════════════════════════════════
 
 def main():
     """Main execution pipeline."""
@@ -595,9 +579,7 @@ def main():
     return calculator, results, df
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # SAVE CALCULATOR
-# ══════════════════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
     calculator, results, df = main()
