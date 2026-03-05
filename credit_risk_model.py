@@ -40,7 +40,7 @@ RANDOM_STATE = 42
 
 # DATA LOADING & EXPLORATION
 
-def load_and_explore_data(filepath = r'C:\Users\alexl\OneDrive\Desktop\桌面\ICG\Forage-JPMorgan\Task 3 and 4_Loan_Data.csv'):
+def load_and_explore_data(filepath = r'C:\Users\alexl\OneDrive\Desktop\桌面\ICG\Forage-JPMorgan\Loan_Data.csv'):
     """Load loan data and perform initial exploration."""
     df = pd.read_csv(filepath)
     
