@@ -10,9 +10,9 @@ from typing import Union, List
 import pandas as pd
 
 
-# ══════════════════════════════════════════════════════════════════════════════
+
 # OPTIMAL BOUNDARIES (from Log-Likelihood optimization)
-# ══════════════════════════════════════════════════════════════════════════════
+
 
 # These boundaries were determined by maximizing log-likelihood using dynamic programming
 # on 10,000 historical mortgage loans with 18.51% default rate
@@ -56,9 +56,9 @@ RATING_PROFILES = {
 }
 
 
-# ══════════════════════════════════════════════════════════════════════════════
+
 # RATING ASSIGNMENT FUNCTIONS
-# ══════════════════════════════════════════════════════════════════════════════
+
 
 def assign_fico_rating(fico_score: Union[int, float], 
                        n_bins: int = 5) -> int:
@@ -203,9 +203,9 @@ def get_expected_default_rate(fico_score: Union[int, float]) -> float:
     return RATING_PROFILES[rating]['default_rate']
 
 
-# ══════════════════════════════════════════════════════════════════════════════
+
 # PORTFOLIO ANALYSIS
-# ══════════════════════════════════════════════════════════════════════════════
+
 
 def analyze_fico_portfolio(fico_scores: Union[List, np.ndarray, pd.Series],
                            n_bins: int = 5) -> pd.DataFrame:
@@ -266,9 +266,9 @@ def analyze_fico_portfolio(fico_scores: Union[List, np.ndarray, pd.Series],
         return pd.DataFrame(summary)
 
 
-# ══════════════════════════════════════════════════════════════════════════════
+
 # DEMO / TESTING
-# ══════════════════════════════════════════════════════════════════════════════
+
 
 if __name__ == "__main__":
     print("=" * 80)
