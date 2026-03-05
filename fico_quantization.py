@@ -21,9 +21,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # DATA LOADING & EXPLORATION
-# ══════════════════════════════════════════════════════════════════════════════
 
 def load_and_explore_data(filepath='Loan_Data.csv'):
     """Load loan data and analyze FICO score distribution."""
@@ -56,9 +54,7 @@ def load_and_explore_data(filepath='Loan_Data.csv'):
     return df
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # APPROACH 1: MSE-BASED BINNING
-# ══════════════════════════════════════════════════════════════════════════════
 
 def calculate_mse_for_bins(fico_scores: np.ndarray, boundaries: List[float]) -> float:
     """
@@ -114,9 +110,7 @@ def mse_binning(fico_scores: np.ndarray, n_bins: int) -> List[float]:
     return boundaries
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # APPROACH 2: LOG-LIKELIHOOD MAXIMIZATION (DYNAMIC PROGRAMMING)
-# ══════════════════════════════════════════════════════════════════════════════
 
 def calculate_bucket_log_likelihood(fico_scores: np.ndarray, 
                                    defaults: np.ndarray,
@@ -235,9 +229,7 @@ def log_likelihood_binning_dp(fico_scores: np.ndarray,
     return sorted(list(set(boundaries)))
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # BUCKET ANALYSIS
-# ══════════════════════════════════════════════════════════════════════════════
 
 def analyze_buckets(fico_scores: np.ndarray, 
                     defaults: np.ndarray, 
@@ -298,9 +290,7 @@ def analyze_buckets(fico_scores: np.ndarray,
     return df_stats
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # RATING MAP CREATION
-# ══════════════════════════════════════════════════════════════════════════════
 
 def create_rating_map(boundaries: List[float], 
                      fico_min: float, 
@@ -330,9 +320,7 @@ def create_rating_map(boundaries: List[float],
     return rating_map
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # VISUALIZATION
-# ══════════════════════════════════════════════════════════════════════════════
 
 def visualize_binning_comparison(df: pd.DataFrame,
                                  mse_boundaries: List[float],
@@ -453,9 +441,7 @@ def visualize_binning_comparison(df: pd.DataFrame,
     print("\n✓ Visualizations saved to fico_quantization_analysis.png")
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 # MAIN EXECUTION
-# ══════════════════════════════════════════════════════════════════════════════
 
 def main(n_bins: int = 5):
     """
