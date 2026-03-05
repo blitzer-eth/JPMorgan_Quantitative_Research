@@ -1,6 +1,6 @@
 # JPMorgan Quantitative Research
 
-This repository contains quantitative models and analysis tools developed during the JPMorgan Chase Virtual Internship. The project focuses on two primary financial domains: credit risk modeling for retail banking and commodity pricing for natural gas storage contracts.
+This repository contains quantitative models and analysis tools developed during the Forage JPMorgan Chase Job Simulation. The project focuses on two primary financial domains: credit risk modeling for retail banking and commodity pricing for natural gas storage contracts.
 
 ## Project Modules
 
@@ -48,8 +48,11 @@ This module analyzes historical natural gas price trends and prices complex stor
 The models generate automated charts to provide financial insights:
 
 * **Credit Analysis**: Default rates segmented by FICO and income levels.
+<img width="2683" height="1783" alt="credit_risk_analysis" src="https://github.com/user-attachments/assets/9795dc69-cf01-45c5-b461-beabeff537a6" />
+
 * **Commodity Trends**: Historical prices versus fitted seasonal models with one year extrapolations.
+<img width="1934" height="2212" alt="nat_gas_analysis" src="https://github.com/user-attachments/assets/793f0ef6-4228-4b7c-b3db-e5c64c4b738a" />
 
 ---
 
-*Developed by Alex Lin as part of the JPMorgan Chase Quantitative Research program.*
+*Developed by Alex Lin as part of the Forage JPMorgan Chase Quantitative Research program.*
