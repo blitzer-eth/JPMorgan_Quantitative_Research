@@ -6,11 +6,9 @@ This script provides a simplified interface for pricing contracts.
 Modify the parameters below and run to get instant valuations.
 """
 
-from contract_pricing import price_storage_contract
+from pricing_model import price_storage_contract
 
-# ════════════════════════════════════════════════════════════════════════════
 # MODIFY THESE PARAMETERS FOR YOUR CONTRACT
-# ════════════════════════════════════════════════════════════════════════════
 
 # When do we buy gas and put it in storage?
 INJECTION_DATES = [
@@ -41,9 +39,7 @@ INJECTION_FEE = 0.01        # $/MMBtu
 WITHDRAWAL_FEE = 0.01       # $/MMBtu
 TRANSPORT_FEE = 50_000      # $ per event
 
-# ════════════════════════════════════════════════════════════════════════════
 # RUN PRICING MODEL
-# ════════════════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
     print("\n" + "="*70)
@@ -95,9 +91,7 @@ if __name__ == "__main__":
         print("Check your parameters and try again.\n")
 
 
-# ════════════════════════════════════════════════════════════════════════════
 # QUICK REFERENCE: Common Scenarios
-# ════════════════════════════════════════════════════════════════════════════
 
 """
 SCENARIO 1: Summer → Winter (Classic Seasonal Arbitrage)
